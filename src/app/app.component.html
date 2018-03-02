@@ -1,20 +1,42 @@
-<!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=" />
+<div class="navbar-fixed">
+   <nav>
+      <div class="nav-wrapper grey darken-3">
+         <div class="brand-logo left" id="align-title">Bookshelf</div>
+         <ul class="right">
+            <a class="waves-effect waves-light btn right" id="mySearch" (click)="mySearch(searchPhrase.value)"><i class="material-icons left">search</i>search</a>
+            <div class="input-field col s6 right">
+               <input placeholder="Book category"  id="book-type-search" type="text" class="active" #searchPhrase>
+               <label for="first_name">Search Books</label>
+            </div>
+         </ul>
+      </div>
+   </nav>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<div class="row" id="listed-books">
+<div class="col s3 light grey lighten-2" id="saved-books">
+   <h6>Books to Read</h6>
+   <div class="collection" *ngFor="let listItem of myList; let i = index">
+      <i class="material-icons right" (click)="removeItem(i)" id="align-remove">cancel</i>
+      <a href="#!" class="collection-item">{{listItem}}</a>
+   </div>
+</div>
+
+<div class="row" id="listed-books" >
+<div class="col s12 m6" *ngFor="let item of myBooks; let i = index">
+<div class="card horizontal">
+      <div class="card-image">
+        <img src={{item.thumbnail.thumbnail}} style="height: 145px">
+            <a class="btn-floating btn-small waves-effect waves-light right" id="add-item" (click)="addNewItem(item.title)"><i class="material-icons">add</i></a>
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+           <h6>{{item.title}}</h6>
+           <div class="description-text">
+            <p>{{item.description}}</p>
+           </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

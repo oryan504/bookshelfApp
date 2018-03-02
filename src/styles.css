@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  background-color: #555;
+  overflow: hidden;
+}
+
+ .row .input-field input {
+   border-bottom: 4px solid white !important;
+   box-shadow: 0 1px 0 0 white !important
+ }
+
+ .input-field input[type=text], .materialize-textarea:focus:not([readonly]) {
+     border-bottom: 1px solid #fff !important;
+     box-shadow: 0 1px 0 0 #fff !important;
+    }

@@ -1,0 +1,63 @@
+.card-content{
+  font-size: 10px;
+}
+
+.card-title{
+  width:100%;
+  padding: 5px 0px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.description-text{
+  font-size: 10px;
+  max-height: 45px;
+  overflow: hidden;
+
+}
+
+#book-type-search{
+  color:#fff;
+}
+
+#book-type-search{
+  color:#fff;
+}
+
+input{
+  color:#fff;
+  outline: solid #fff 3px;
+}
+
+#mySearch{
+  margin-top: 4%;
+}
+
+#align-title{
+  padding-left:1%;
+}
+
+#align-remove{
+  padding-top:3%;
+  padding-right:3%;
+  color:#999;
+  cursor:pointer;
+}
+
+#saved-books{
+ height:100vh;
+}
+
+#listed-books{
+ height:600px;
+ overflow:scroll;
+}
+
+#add-item{
+  margin-top: -45px;
+  margin-right: -20px;
+}
+
+
+
+
